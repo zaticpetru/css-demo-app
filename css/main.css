@@ -1,0 +1,127 @@
+/* ? https://github.com/necolas/normalize.css */
+/* ? small CSS file that provides better cross-browser consistency in the default styling of HTML elements. */
+@import 'normalize.css';
+
+/* icons from: https://css.gg/ */
+@import url('https://css.gg/menu-boxed.css');
+@import url('https://css.gg/dark-mode.css');
+
+/* || Utility classes */
+@import 'utils.css';
+
+/* || Navigation styles, menu */
+@import 'navigation.css';
+
+/* || Colors */
+@import 'colors.css';
+
+/* || Micro-layouts */
+@import 'micro-layouts.css';
+
+/* || Grid */
+@import 'grid.css';
+
+
+/** Further reading, CSS @import: https://developer.mozilla.org/en-US/docs/Web/CSS/@import  */
+
+/* || General styling */
+
+/* ? common best practice is to define custom properties on the :root pseudo-class,
+   ? so that it can be applied globally across your HTML document: */
+:root {
+    --base-spacing: 0.75rem;
+    --container-max-width: 110rem;
+    --nav-height: 10rem;
+    --nav-height--: calc(-1 * var(--nav-height))
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /*? rem - relative to font-size of the root element - html */
+    /*? default font size for html is 16px */
+    /*? 14px - size used to calculate rem */
+    font-size: 16px;
+    /* line height - used to set distances between lines */
+    /* 2 -> 2 * element's own font size  */
+    line-height: 2; /* 32px */
+}
+
+body {
+    /* ? 1. I’d like to use the "Helvetica Neue" font here, please. */
+    /* ? 2. If you don’t have that, try Helvetica next. */
+    /* ? 3. If you don’t have that, try Arial next. */
+    /* ? 4. All else fails, use whatever you’ve got for the generic sans-serif. */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    /** further reading: https://www.smashingmagazine.com/2021/05/reduce-font-loading-impact-css-descriptors/ */
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+footer {
+    border: 1px solid var(--surface3);
+    border-bottom: none;
+}
+
+h1 {
+    /* ex: 1.75rem => 14px * 1.75 = 24.5px */
+    font-size: 1.75rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+}
+
+img {
+    max-width: 100%;
+}
+
+.container,
+footer {
+    max-width: var(--container-max-width);
+}
+
+main {
+    /* fill page */
+    min-height: 90vh;
+} 
+
+/* || main content styling */
+/* using universal selector * to apply styling to all children */
+
+/* 
+    ? Macro layout example using flex-box
+    ? and a media query for screens larger than 600px
+*/
+
+.flex.column-to-row-query {
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .flex.column-to-row-query {
+        flex-direction: row;
+    }
+    .flex.column-to-row-query .two {
+        /* or flex: 2 */
+        flex-grow: 2;
+        flex-basis: 0;
+    }
+    .flex.column-to-row-query .one {
+        /* or flex: 1 */
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+}

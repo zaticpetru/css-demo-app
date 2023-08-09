@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The charset attribute specifies the character encoding for the HTML document. -->
+    <meta charset="UTF-8">
+
+    <!-- The width=device-width part sets the width of the page to follow the screen-width of the device. -->
+    <!-- The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="img/css-extension-x64.png">
+
+    <title>CSS demo - Micro layouts</title>
+
+    <link rel="stylesheet" href="css/main.css">   
+
+</head>
+<body class="surface-1">
+    <input type="checkbox" id="show-menu" hidden />
+    <input type="checkbox" id="change-color-theme" hidden />
+
+    <div class="menu container margin-center surface-4 rad-shadow">
+        <label for="show-menu" class="show-menu-btn margin-center min-content p-1">
+            <i class="gg-menu-boxed"></i>
+        </label>
+
+        <nav class="flex wrap justify-space-around column-to-row-query margin-center p-1">
+            <a href="/index.html">Home</a>
+            <a href="/colors.html">Colors</a>
+            <a href="#">Cards</a>
+            <a href="/grid.html">Grid</a>
+            <a href="/about.html">About</a>
+            <label for="change-color-theme">
+                <i class="gg-dark-mode"></i>
+            </label>
+        </nav>
+    </div>
+
+    <header class="p-1">
+        <h1 class="rainbow-text unselectable">a little bit of CSS</h1>
+    </header>
+
+    <main class="container margin-center">
+        <div class="flex column-to-row-query rad-shadow">
+            <article class="p-1 two">
+                <h2>Micro layouts</h2>
+                <p>When we think of layouts, we often think of page-level designs. But smaller components within the page can have their own self-contained layouts.</p>
+                <p>Ideally, these component-level layouts will adjust themselves automatically, regardless of their position on the page. There may be situations where you don't know if a component will be placed into the main content column or the sidebar or both.</p>
+                <p>Here we can see how we can create flexible components that can be placed anywhere created with Flexbox or with Grid</p>
+            </article>
+            <div class="separator"></div>
+            <aside class="p-1 one">
+                <h2>Looking forward to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries">Container Queries</a></h2>
+                <p>In the future, creating components that can adapt to their container will become much easier with the implementation of Container Queries. For now, however, you need to consider the existing ways to create reusable and responsive micro-layouts.</p>
+                <p>For more information about micro-layouts web.dev: <a href="https://web.dev/learn/design/micro-layouts/">https://web.dev/learn/design/micro-layouts/</a></p>
+            </aside>
+        </div>
+
+        <div class="ex-section m-2-y surface-2 rad-shadow">
+            <div class="ex-area m-1">
+                <div class="ex-container surface-4">
+                    <div class="card-1 surface-3 m-1 border-radius-1">
+                        <div class="illustration m-1">
+                            <img src="img/css-extension-x512.png" alt="css-logo" />
+                        </div>
+                        <div class="content p-1 surface-2 border-radius-1">
+                            <h3>Card content</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-1-y p-2-x border-left-separator">
+                <p>Responsive card with flexbox</p>
+                <p>In this example we have components of a card flexible (as the flexbox name suggest).
+                We can declare elements with maximum or minimum size and let other elements flex to fit accordingly</p>
+                <p>In this example image takes 1/4 of available space, but it never get larger than 125px. The text takes up the other 3/4 of available space </p>
+            </div>
+        </div>
+
+
+        <div class="ex-section m-2-y rad-shadow">
+            <input type="checkbox" id="toggle-max-width" hidden />
+            <div class="ex-area m-1">
+                <div class="ex-container surface-4 overflow-auto">
+                    <div class="flex wrap no-gap">
+                        <div class="card-1 surface-3 m-1 border-radius-1 max-width-200px">
+                            <div class="illustration m-1">
+                                <img src="img/css-extension-x512.png" alt="css-logo" />
+                            </div>
+                            <div class="content p-1 surface-2 border-radius-1">
+                                <h3>Card content</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="card-1 surface-3 m-1 border-radius-1 max-width-200px">
+                            <div class="illustration m-1">
+                                <img src="img/css-extension-x512.png" alt="css-logo" />
+                            </div>
+                            <div class="content p-1 surface-2 border-radius-1">
+                                <h3>Card content</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="card-1 surface-3 m-1 border-radius-1 max-width-200px">
+                            <div class="illustration m-1">
+                                <img src="img/css-extension-x512.png" alt="css-logo" />
+                            </div>
+                            <div class="content p-1 surface-2 border-radius-1">
+                                <h3>Card content</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-1-y p-2-x border-left-separator">
+                <label for="toggle-max-width" class="max-width-button unselectable">
+                    Enable max width for cards
+                </label>
+                <p>Multiple cards with max-width</p>
+                <p>
+                    In this example we have multiple cards with max-width.
+                    We can use the max-width property to set the maximum width of a component.
+                    This is useful when we want to make sure that a component doesn't get too large.
+                </p>
+                <p>
+                    Also here max-width let us control the card layout and force it in to "tall" layout.
+                </p>
+            </div>
+        </div>
+
+        <div class="ex-section m-2-y rad-shadow">
+            <input type="checkbox" id="toggle-max-width" hidden />
+            <div class="ex-area m-1">
+                <div class="ex-container surface-4 overflow-auto">
+                    <div class="flex wrap no-gap">
+                        <div class="container-inline-size grow-1">
+                            <div class="card-2 surface-3 m-1 border-radius-1">
+                                <div class="illustration m-1">
+                                    <img src="img/css-extension-x512.png" alt="css-logo" />
+                                </div>
+                                <div class="content p-1 surface-2 border-radius-1">
+                                    <h3>Card content</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-inline-size grow-2">
+                            <div class="card-2 surface-3 m-1 border-radius-1">
+                                <div class="illustration m-1">
+                                    <img src="img/css-extension-x512.png" alt="css-logo" />
+                                </div>
+                                <div class="content p-1 surface-2 border-radius-1">
+                                    <h3>Card content</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-inline-size grow-1">
+                            <div class="card-2 surface-3 m-1 border-radius-1">
+                                <div class="illustration m-1">
+                                    <img src="img/css-extension-x512.png" alt="css-logo" />
+                                </div>
+                                <div class="content p-1 surface-2 border-radius-1">
+                                    <h3>Card content</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-1-y p-2-x border-left-separator">
+                <p>Multiple cards with container queries</p>
+                <p>
+                    In this example we have multiple cards with container queries.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flex direction-column margin-center border-radius-t-1 surface-4">
+        <small>Original footer content - &copy; 2022 - you know we copy</small>
+        <small>
+            <a href="https://www.flaticon.com/free-icons/files-and-folders" title="files and folders icons">Files and folders icons created by Yuan Design - Flaticon</a>
+        </small>
+    </footer>
+
+    <script src="index.js" defer></script>
+
+</body>
+</html>

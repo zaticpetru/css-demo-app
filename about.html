@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The charset attribute specifies the character encoding for the HTML document. -->
+    <meta charset="UTF-8">
+
+    <!-- The width=device-width part sets the width of the page to follow the screen-width of the device. -->
+    <!-- The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="img/css-extension-x64.png">
+
+    <title>CSS demo - About</title>
+
+    <link rel="stylesheet" href="css/main.css">   
+
+</head>
+<body class="surface-1">
+    <input type="checkbox" id="show-menu" hidden />
+    <input type="checkbox" id="change-color-theme" hidden />
+
+    <div class="menu container margin-center surface-4 rad-shadow">
+        <label for="show-menu" class="show-menu-btn margin-center min-content p-1">
+            <i class="gg-menu-boxed"></i>
+        </label>
+
+        <nav class="flex wrap justify-space-around column-to-row-query margin-center p-1">
+            <a href="/index.html">Home</a>
+            <a href="/colors.html">Colors</a>
+            <a href="/cards.html">Cards</a>
+            <a href="/grid.html">Grid</a>
+            <a href="#">About</a>
+            <label for="change-color-theme">
+                <i class="gg-dark-mode"></i>
+            </label>
+        </nav>
+    </div>
+
+    <header class="p-1">
+        <h1 class="rainbow-text unselectable">a little bit of CSS</h1>
+    </header>
+
+    <main class="container margin-center">
+        <div class="flex column-to-row-query rad-shadow">
+            <article class="p-1 two">
+                <h2>About</h2>
+                <p>Resources</p>
+                <ul>
+                    <li><a href="https://web.dev/learn/design/micro-layouts/">https://web.dev/learn/design/micro-layouts/</a></li>
+                    <li><a href="https://stateofcss.com/en-us/">https://stateofcss.com/en-us/</a></li>
+                    <li><a href="https://css-tricks.com/">https://css-tricks.com/</a></li>
+                    <li><a href="https://codepen.io/">https://codepen.io/</a></li>
+                    <li><a href="https://web.dev/tags/css/">https://web.dev/tags/css/</a></li>
+                    <li><a href="https://web.dev/learn/design/">https://web.dev/learn/design/</a></li>
+                    <li><a href="https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></li>
+                    <li><a href="https://www.smashingmagazine.com/category/css/">https://www.smashingmagazine.com/category/css/</a></li>
+                    <li><a href="https://dev.to/t/css">https://dev.to/t/css</a></li>
+
+                </ul>
+            </article>
+            <div class="separator"></div>
+            <aside class="p-1 one">
+                <h2>Presentation created for Amdaris internship</a></h2>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="flex direction-column margin-center border-radius-t-1 surface-4">
+        <small>Original footer content - &copy; 2022 - you know we copy</small>
+        <small>
+            <a href="https://www.flaticon.com/free-icons/files-and-folders" title="files and folders icons">Files and folders icons created by Yuan Design - Flaticon</a>
+        </small>
+    </footer>
+
+    <script src="index.js" defer></script>
+
+</body>
+</html>
